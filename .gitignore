@@ -4,8 +4,8 @@ node_modules
 jspm_packages
 link-checker-results.txt
 **/*npm-debug.log.*
-*.js
-*.js.map
+**/app/**/*.js
+**/app/**/*.map
 _test-output
 _temp
 

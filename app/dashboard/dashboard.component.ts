@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {Note, NoteService} from '../notes/note.service';
 
 @Component({
-  selector:'dashboard',
+  selector:'my-dashboard',
   templateUrl:'app/dashboard/dashboard.component.html'
 })
 

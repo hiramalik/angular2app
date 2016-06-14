@@ -1,0 +1,16 @@
+<article class="container">
+  <h4>Notes</h4>
+  <div>
+    <div class="row">
+      <div class="col-md-3 col-md-offset-1"
+        *ngFor="#note of notes | async"
+        (click)="gotoDetail(note)">
+
+        <button >
+          {{note.name}}
+        </button>
+        <p class="label label-info">{{note.category.name}}</p>
+      </div>
+    </div>
+  </div>
+</article>

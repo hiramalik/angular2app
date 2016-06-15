@@ -1,12 +1,22 @@
 <div class='navbar navbar-default navbar-static-top'>
-    <div class="container">
-        <div class="navbar-header">
-          <div class="navbar-brand">
+  <header>
+      <div class="container">
+        <div class="navbar-brand navbar-header ">
             <a href="/#/">Take Notes</a>
-          </div>
-
-        </div>
-        <my-nav></my-nav>
-    </div>
-    <my-dashboard></my-dashboard>
+        </div>   
+     </div>
+     <nav class="container">
+        <ul class="nav navbar-nav ">
+            <li><a href='' [routerLink]="['/']">Dashboard</a></li>
+            <li><a href='' [routerLink]="['/note']">Notes</a></li>
+        </ul>
+</nav>
+  </header> 
 </div>
+<main>
+  <section>
+      <div>      
+          <router-outlet></router-outlet>
+      </div>
+  </section>
+</main>

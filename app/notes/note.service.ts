@@ -15,8 +15,9 @@ export class NoteService {
         
     }
     getNotes(){
-         return this._http.get('../api/notes.json').
+         return this._http.get('app/api/notes.json').
          map((response:Response) => <Note[]>response.json().data)
+         .do(data => console.log(data))
          .catch(this.handleError);
     }
 

@@ -1,0 +1,24 @@
+<article >
+  <!--<div *ngIf="character">-->
+    <h4>{{editNote.name | uppercase}} details</h4>
+
+    <div >
+      <label  for="nametext">Name</label>
+      <input type="text" id="nametext" class="form-control" [(ngModel)]="editNote.name" />
+    </div>
+
+    <div >
+      <label for="sidetext">Side</label>
+      <input type="text" id="sidetext" [(ngModel)]="editNote.text" />
+    </div>
+
+    <div>
+      <button (click)="save()">Save</button>
+      &nbsp;
+      <button (click)="cancel()" [class.not-displayed]="isAddMode()">Cancel</button>
+      &nbsp;
+      <button (click)="delete()" [class.not-displayed]="isAddMode()">Delete</button>
+    </div>
+
+  <!--</div>-->
+</article>

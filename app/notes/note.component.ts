@@ -56,8 +56,8 @@ save() {
       this.editNote = this._entityService.clone(this.note);
       return;
     }
-    this._noteService.getNote(id)
-      .subscribe(note => this._setEditNote(note));
+    this._noteService.getNotes()
+      .subscribe((notes: Note[]) => notes.find(n => n.id===id));
   }
 
   private _setEditNote(note: Note) {
@@ -71,7 +71,7 @@ save() {
 
   private _gotoNotes() {
     let id = this.note ? this.note.id : null;
-    let route = ['Notes', { id: id }];
+    let route = ['notes', id];
     this._router.navigate(route);
   }
 

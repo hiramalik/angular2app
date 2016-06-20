@@ -7,6 +7,7 @@ import {Router, ROUTER_DIRECTIVES , ROUTER_PROVIDERS, Routes} from '@angular/rou
 @Component({
   selector:'note-list',
   templateUrl:'app/notes/notes.list.component.html',
+  styleUrls:['app/notes/notes.list.component.css'],
   directives:[ROUTER_DIRECTIVES],
   providers:[NoteService]
 

@@ -47,13 +47,7 @@ addNote(note: Note) {
       //.catch(this._exceptionService.catchBadResponse);
       //.finally(() => this._spinnerService.hide());
   }
-  getNote(id: number) {
-   // this._spinnerService.show();
-    return this._http.get(`${notesUrl}/${id}`)
-      .map((response: Response) => response.json().data);
-     // .catch(this._exceptionService.catchBadResponse);
-      //.finally(() => this._spinnerService.hide());
-  }
+ 
 
  // onDbReset = this._messageService.state;
 

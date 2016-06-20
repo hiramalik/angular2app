@@ -1,29 +1,22 @@
-<article>
-  <h4>Notes</h4>
-
-  <!--<button href='' [routerLink]="['/', 'new']">Add</button>-->
-<a href='' [routerLink]="['/note', 'new']">
-                            click me
-                            </a>
+<article class="container-fluid">
+  <h2>Notes</h2>
+<a href='' class="btn btn-primary btn-lg active lrg" role="button" [routerLink]="['/note', 'new']">Add</a>
   <!--<filter-text (changed)="filterChanged($event)"></filter-text>-->
 
-  <!--<ul >
-    <li *ngFor="#note of filteredCharacters">
 
-      <div >
-        <div >
-          <h2 >{{note.id}}.
-{{note.name}}</h2>
+  <ul class="notes">
+    <li class="note" *ngFor="let note of filteredNotes">
+      <div class="box">
+        <div class="in">
+          <h4 >{{note.name}}</h4>
         </div>
-        <div >
-          <button  [routerLink]="['Note', {id: note.id}]">
-
-            <div ></div>
-
-          </button>
-        </div>
+          <div class="in">
+            <a href="" class="card-link"[routerLink]="['/note', note.id]">
+              <div class="glyphicon glyphicon-pencil"></div>
+            </a>
+          </div>
       </div>
-
+      
     </li>
-  </ul>-->
+  </ul>
 </article>

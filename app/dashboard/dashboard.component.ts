@@ -4,6 +4,7 @@ import {Note, NoteService} from '../notes/note.service';
 @Component({
   selector:'my-dashboard',
   templateUrl:'app/dashboard/dashboard.component.html',
+  styleUrls:['app/dashboard/dashboard.component.css'],
   providers:[NoteService]
 })
 

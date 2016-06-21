@@ -11,6 +11,7 @@ import {Router, ROUTER_DIRECTIVES , ROUTER_PROVIDERS, Routes} from '@angular/rou
 @Component({
     selector: 'note-app',
     templateUrl: 'app/app.component.html',
+    styleUrls:['app/app.component.css'],
     directives:[DashboardComponent, ROUTER_DIRECTIVES],
     providers: [HTTP_PROVIDERS, ROUTER_PROVIDERS]
 })

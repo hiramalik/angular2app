@@ -9,21 +9,21 @@
     },
     {
       "id": 12,
-      "name": "Rey",
+      "name": "Advice",
       "category":"General",
-      "text": "light"
+      "text": "advicing"
     },
     {
       "id": 13,
-      "name": "Finn (FN2187)",
+      "name": "Inspiration",
       "category":"General",
-      "text": "light"
+      "text": "Inspiring"
     },
     {
       "id": 14,
-      "name": "Han Solo",
+      "name": "Idea",
       "category":"General",
-      "text": "light"
+      "text": "An idea!"
     }
   ]
 

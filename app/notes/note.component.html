@@ -1,23 +1,19 @@
-<article >
+<article class="container">
   <!--<div *ngIf="character">-->
-    <h4>{{editNote.name | uppercase}} details</h4>
+    <h4>{{editNote.name | uppercase}} note</h4>
 
-    <div >
-      <label  for="nametext">Name</label>
-      <input type="text" id="nametext" class="form-control" [(ngModel)]="editNote.name" />
+    <div class="input">
+      <input type="text" id="nametext" placeholder="Note name" class="form-control" [(ngModel)]="editNote.name" />
     </div>
 
-    <div >
-      <label for="sidetext">Side</label>
-      <input type="text" id="sidetext" [(ngModel)]="editNote.text" />
+    <div class="input text">
+    <textarea id="sidetext"class="form-control" rows="5" [(ngModel)]="editNote.text"></textarea>
     </div>
 
     <div>
-      <button (click)="save()">Save</button>
+      <button class="btn btn-primary btn-lg active" (click)="save()">Save</button>
       &nbsp;
-      <button (click)="cancel()" [class.not-displayed]="isAddMode()">Cancel</button>
-      &nbsp;
-      <button (click)="delete()" [class.not-displayed]="isAddMode()">Delete</button>
+      <button class="btn btn-primary btn-lg active" (click)="delete()" [class.not-displayed]="isAddMode(editNote.id)">Delete</button>
     </div>
 
   <!--</div>-->

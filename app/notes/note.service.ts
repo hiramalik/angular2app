@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 
-let notesUrl = 'api/notes.json';
+
 export interface Note {
   id: number;
   name: string;
@@ -12,14 +12,15 @@ export interface Note {
 
 @Injectable()
 export class NoteService {
+  notesUrl = 'app/notes'
     constructor(private _http: Http) {
         
     }
 
 getNotes(){
-      return this._http.get(notesUrl).
+      return this._http.get(this.notesUrl).
       map((response:Response) => <Note[]>response.json().data)
-      .do(data => console.log(data))
+      .do(data => console.log('All:' + JSON.stringify(data)))
       .catch(this.handleError);
 }
 
@@ -34,30 +35,31 @@ addNote(note: Note) {
     let body = JSON.stringify(note);
    // this._spinnerService.show();
     return this._http
-      .post(notesUrl, body, options)
-      .map(res => res.json().data);
-      // .catch(this._exceptionService.catchBadResponse)
+      .post(this.notesUrl, body, options)
+      .map(res => res.json().data)
+      .do(data=>console.log(data))
+      .catch(this.handleError);
       // .finally(() => this._spinnerService.hide());
+  }
+  
+  getNote(id:number){
+    return this.getNotes()
+      .map((notes: Note[]) => notes.find(n => n.id===id))
+      .do(n=>console.log('selected'+ JSON.stringify(n)))
+      .catch(this.handleError);
   }
 
   deleteNote(note: Note) {
     //this._spinnerService.show();
+     let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+
+    let url = `${this.notesUrl}/${note.id}`;
     return this._http
-      .delete(`${notesUrl}/${note.id}`);
+      .delete(url, headers )
+      .catch(this.handleError);
       //.catch(this._exceptionService.catchBadResponse);
       //.finally(() => this._spinnerService.hide());
   }
  
-
- // onDbReset = this._messageService.state;
-
-  updateNote(note: Note) {
-    let body = JSON.stringify(note);
-   // this._spinnerService.show();
-
-    return this._http
-      .put(`${notesUrl}/${note.id}`, body);
-     // .catch(this._exceptionService.catchBadResponse);
-      //.finally(() => this._spinnerService.hide());
-  }
 }

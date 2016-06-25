@@ -8,6 +8,7 @@ import { Router, OnActivate, RouteSegment } from '@angular/router';
 @Component({
   selector:'note',
   templateUrl:'app/notes/note.component.html',
+  styleUrls:['app/notes/note.component.css'],
   providers:[NoteService, EntityService]
 
 })
@@ -39,8 +40,8 @@ save() {
       if (note.id == null) {
         this._noteService.addNote(note)
           .subscribe(not => {
-            this._setEditNote(not);
             //this._toastService.activate(`Successfully added ${char.name}`);
+            this._setEditNote(not);
             this._gotoNotes();
           });
         return;
@@ -52,12 +53,12 @@ save() {
   private _getNote(id:number) {
     if (id === 0) return;
     if (this.isAddMode(id)) {
-      this.note = <Note>{ name: '', text: 'dark' };
+      this.note = <Note>{ name: '', text: '' };
       this.editNote = this._entityService.clone(this.note);
       return;
     }
-    this._noteService.getNotes()
-      .subscribe((notes: Note[]) => notes.find(n => n.id===id));
+    this._noteService.getNote(id)
+      .subscribe((note: Note) => this._setEditNote(note));
   }
 
   private _setEditNote(note: Note) {
@@ -71,8 +72,20 @@ save() {
 
   private _gotoNotes() {
     let id = this.note ? this.note.id : null;
-    let route = ['notes', id];
+    let route = ['/notes'];
     this._router.navigate(route);
   }
 
+   delete() {
+    // let msg = `Do you want to delete ${this.note.name}?`;
+    // this._modalService.activate(msg).then(responseOK => {
+    //   if (responseOK) {
+        this._noteService.deleteNote(this.note)
+          .subscribe(() => {
+            //this._toastService.activate(`Deleted ${this.note.name}`);
+            this._gotoNotes();
+          });
+    //   }
+    // });
+  }
 }

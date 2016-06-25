@@ -5,25 +5,25 @@
 .in{
     display: inline-block;
     padding: 4px;
+    font-family: cursive;
 }
-.box{
-    box-shadow: 0 0 15px black;
+div.box{
+    box-shadow: 0 0 10px black;
     border-radius:10px;
-    border: 2px solid cadetblue;
+    border: 2px solid seagreen;
     width: 400px;
     cursor: pointer;
     background-color:  #eee;
-    cursor: pointer;
     position: relative;
     left: 0;
-    margin: .5em;
+    margin: 1em;
     height: 4em;
   
 }
 .box:hover{
     color: #eee;
-    background-color: darkred;
-    border: 2px solid darkred;
+    background-color: #7cbb00;
+    border: 2px solid #7cbb00;
     left: .3em;
     box-shadow: none;
 }
@@ -34,6 +34,11 @@
 
 .lrg{
     margin: 10px 20px 20px 10px;
+     font-family: cursive;
+     background-color: #f65314;
+}
+.lrg:hover{
+     background-color: darkorange;
 }
 
 h3{
@@ -41,5 +46,6 @@ h3{
     left: 8px;
     width: 120px;
     padding: 4px;
+    font-family: cursive;
     border-bottom: 2px solid lightgrey;
 }

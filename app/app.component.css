@@ -1,7 +1,18 @@
-head{
+.navbar-header{
     color: darkred;
     padding: .5em;
     position: relative;
-    top: -2em;
+    top: -1em;
+    left:3px;
+}
 
+.navbar h3{
+    color: white;
+}
+.nav-tabs a{
+    color: white;
+}
+
+.navbar-nav a:hover{
+    color: white;
 }

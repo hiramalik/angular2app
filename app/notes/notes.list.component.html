@@ -1,9 +1,7 @@
-<article class="container-fluid">
+<article class="container-fluid template animated slideInRight">
   <section>
   <a href='' class="btn btn-primary btn-lg active lrg" role="button" [routerLink]="['/note', 'new']">ADD NOTES</a>
   </section>
-  <!--<filter-text (changed)="filterChanged($event)"></filter-text>-->
-
 
   <ul class="notes">
     <li class="note" *ngFor="let note of filteredNotes">
@@ -12,11 +10,6 @@
         <div class="in">
           <h4>{{note.name}}</h4>
         </div>
-          <!--<div class="in">
-            <a href="" class="card-link"[routerLink]="['/note', note.id]">
-              <div class="glyphicon glyphicon-edit"></div>
-            </a>
-          </div>-->
       </div>
       </a>
     </li>

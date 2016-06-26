@@ -16,3 +16,8 @@
 .navbar-nav a:hover{
     color: white;
 }
+
+.animated {
+  animation-duration: 500ms;
+  animation-fill-mode: both;
+}

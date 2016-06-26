@@ -19,3 +19,6 @@ h4{
     width: 600px;
 
 }
+.btn{
+    transition: background-color .5s;
+}

@@ -7,6 +7,7 @@
     margin: 0px 0 20px 0;
     overflow: hidden;
     text-overflow: ellipsis;
+    transition: bottom .4s;
 }
 
 .panel-heading{
@@ -42,4 +43,12 @@ h3{
 div.modal-header{
     background: linear-gradient(#004b8b, rgba(173, 216, 230, 0.41));
     font-family: cursive;
+}
+
+.close{
+    font-size:200%;
+    transition: transform 4s ease-out;
+}
+.close:hover{
+    transform: rotate(360deg);
 }

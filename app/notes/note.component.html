@@ -1,5 +1,5 @@
-<article class="container">
-  <!--<div *ngIf="character">-->
+<article class="container template animated slideInRight">
+  
     <div class="well">
     <h4>{{editNote.name | uppercase}} note</h4>
 
@@ -8,7 +8,7 @@
     </div>
 
     <div class="input text">
-    <textarea id="sidetext"class="form-control" rows="5" [(ngModel)]="editNote.text"></textarea>
+    <textarea id="sidetext"class="form-control" placeholder="text" rows="5" [(ngModel)]="editNote.text"></textarea>
     </div>
 
     <div>
@@ -19,5 +19,5 @@
       <button class="btn btn-danger btn-lg active " (click)="delete()" [class.not-displayed]="isAddMode(editNote.id)">Delete</button>
     </div>
     </div>
-  <!--</div>-->
+  
 </article>

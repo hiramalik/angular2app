@@ -17,12 +17,13 @@ div.box{
     position: relative;
     left: 0;
     height: 4em;
+    transition:background-color .6s, background .6s, border .6s, color .6s, left .6s;
   
 }
-.box:hover{
+div.box:hover{
     color: #eee;
     background-color: #7cbb00;
-    background: linear-gradient(#004b8b, rgba(173, 216, 230, 0.41));    
+    background: #004b8b;    
     border: 2px solid #7cbb00;
     left: .3em;
     box-shadow: none;
@@ -35,7 +36,7 @@ div.box{
 .lrg{
     margin: 10px 20px 20px 10px;
     font-family: cursive;
-    background-color:#004b8b;
+    transition: background-color .5s;
 }
 .lrg:hover{
      background-color: #023f73;

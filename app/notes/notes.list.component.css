@@ -7,45 +7,54 @@
     padding: 4px;
     font-family: cursive;
 }
+
 div.box{
     box-shadow: 0 0 10px black;
     border-radius:10px;
-    border: 2px solid seagreen;
+    border: 2px solid #004b8b;
     width: 400px;
-    cursor: pointer;
-    background-color:  #eee;
+    background: rgba(173, 216, 230, 0.41);
     position: relative;
     left: 0;
-    margin: 1em;
     height: 4em;
   
 }
 .box:hover{
     color: #eee;
     background-color: #7cbb00;
+    background: linear-gradient(#004b8b, rgba(173, 216, 230, 0.41));    
     border: 2px solid #7cbb00;
     left: .3em;
     box-shadow: none;
 }
 
 .note{
-    margin: 5px;
+    margin: 5px 0 5px 0;
 }
 
 .lrg{
     margin: 10px 20px 20px 10px;
-     font-family: cursive;
-     background-color: #f65314;
+    font-family: cursive;
+    background-color:#004b8b;
 }
 .lrg:hover{
-     background-color: darkorange;
+     background-color: #023f73;
 }
 
 h3{
     position: relative;
-    left: 8px;
     width: 120px;
     padding: 4px;
     font-family: cursive;
     border-bottom: 2px solid lightgrey;
+}
+section.well.well-sm{
+   width: 400px;
+}
+.glyphicon.glyphicon-edit {
+    font-size: 25px;
+}
+div.box::after{
+    font-family: 'Glyphicons Halflings';
+    content:"\e065";;
 }

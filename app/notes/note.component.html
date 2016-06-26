@@ -1,5 +1,6 @@
 <article class="container">
   <!--<div *ngIf="character">-->
+    <div class="well">
     <h4>{{editNote.name | uppercase}} note</h4>
 
     <div class="input">
@@ -13,8 +14,10 @@
     <div>
       <button class="btn btn-primary btn-lg active" (click)="save()">Save</button>
       &nbsp;
-      <button class="btn btn-primary btn-lg active" (click)="delete()" [class.not-displayed]="isAddMode(editNote.id)">Delete</button>
+      <button class="btn btn-warning btn-lg active" (click)="cancel()" [class.not-displayed]="isAddMode(editNote.id)">Cancel</button>
+      &nbsp;
+      <button class="btn btn-danger btn-lg active " (click)="delete()" [class.not-displayed]="isAddMode(editNote.id)">Delete</button>
     </div>
-
+    </div>
   <!--</div>-->
 </article>

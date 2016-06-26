@@ -1,5 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Note, NoteService} from '../notes/note.service';
+import { Router, RouteSegment } from '@angular/router';
 
 @Component({
   selector:'my-dashboard',
@@ -13,7 +14,8 @@ export class DashboardComponent implements OnInit{
     errorMessage: string;
     notes: Note[];
 
-constructor(private _noteService: NoteService){}
+constructor(private _noteService: NoteService,
+private _router: Router){}
     getNotesList(){
       this._noteService.getNotes().
       subscribe(
@@ -24,4 +26,5 @@ constructor(private _noteService: NoteService){}
     ngOnInit(){
         this.getNotesList();
     }
+
 }

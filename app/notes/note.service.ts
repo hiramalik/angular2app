@@ -58,8 +58,15 @@ addNote(note: Note) {
     return this._http
       .delete(url, headers )
       .catch(this.handleError);
-      //.catch(this._exceptionService.catchBadResponse);
-      //.finally(() => this._spinnerService.hide());
+  }
+
+  updateNote(note: Note) {
+    let body = JSON.stringify(note);
+    //this._spinnerService.show();
+
+    return this._http
+      .put(`${this.notesUrl}/${note.id}`, body)
+      .catch(this.handleError);
   }
  
 }

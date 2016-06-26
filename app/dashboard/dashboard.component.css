@@ -1,39 +1,45 @@
-.item{
+.panel{
     position: relative;
     bottom: 0;
-    color:black;
-    background-color: limegreen;
-    width: 300px;
-    height: 245px;
-    border-radius:10px;
-    border: 2px solid seagreen;
-    margin: 20px;
-    vertical-align: middle;
-    font-size: 28;
-    font-family: cursive;
+    width: 285px;
+    height: 225px;
     cursor: pointer;
+    margin: 0px 0 20px 0;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.item:hover {
+.panel-heading{
+    font-size: 28;
+    font-family: cursive;
+    background: linear-gradient(#004b8b, rgba(173, 216, 230, 0.41));
+
+}
+.panel.panel-default:hover {
     bottom:.4em;
 }
 
 h3{
     font-family: cursive;
-    margin: 20px;
-    position: relative;
-    
+    margin: 20px 0 20px 0;
+    position: relative;  
     width: 150px;
     padding: 4px;
     border-bottom: 2px solid lightgrey;
 }
-.item .text{
+.panel-body{
     font-weight: normal;
-    font-size: 18;
+    font-size: 15;
+    height: 225px;
+    background: rgba(173, 216, 230, 0.41);
     text-align: left;
-    color:white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    overflow: hidden;
+    text-overflow: ellipsis;
    
+}
+
+div.modal-header{
+    background: linear-gradient(#004b8b, rgba(173, 216, 230, 0.41));
+    font-family: cursive;
 }

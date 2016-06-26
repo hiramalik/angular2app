@@ -40,14 +40,13 @@ save() {
       if (note.id == null) {
         this._noteService.addNote(note)
           .subscribe(not => {
-            //this._toastService.activate(`Successfully added ${char.name}`);
             this._setEditNote(not);
             this._gotoNotes();
           });
         return;
       }
-      // this._noteService.updateNote(note)
-      //   .subscribe(() => this._toastService.activate(`Successfully saved ${note.name}`));
+      this._noteService.updateNote(note)
+        .subscribe(() => this._gotoNotes());
 }
 
   private _getNote(id:number) {
@@ -77,15 +76,13 @@ save() {
   }
 
    delete() {
-    // let msg = `Do you want to delete ${this.note.name}?`;
-    // this._modalService.activate(msg).then(responseOK => {
-    //   if (responseOK) {
         this._noteService.deleteNote(this.note)
           .subscribe(() => {
-            //this._toastService.activate(`Deleted ${this.note.name}`);
             this._gotoNotes();
           });
-    //   }
-    // });
+  }
+
+  cancel(){
+    this._gotoNotes();
   }
 }
